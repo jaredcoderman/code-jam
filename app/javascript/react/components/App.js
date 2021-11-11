@@ -1,7 +1,15 @@
 import React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Home from './Home'
 
 const App = (props) => {
-  return (<h1>Make It So React</h1>)
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" component={Home} />
+      </Switch>
+    </BrowserRouter>
+  )
 }
 
 export default App
