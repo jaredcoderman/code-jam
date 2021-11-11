@@ -13,4 +13,11 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]
     end
   end
+
+  validates :name, presence: true 
+  validates :email, presence: true
+  validates :encrypted_password, presence: true
+
+  has_many :user_projects
+  has_many :projects, through: :user_projects
 end
