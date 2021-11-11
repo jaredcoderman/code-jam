@@ -12,8 +12,11 @@ So I can move around the site more easily [ MOSTLY DONE ]
 As a user
 I want to be able to navigate to the My Projects page
 So I can see a list of my projects [ DONE ]
-- Missing: Controller testing due to using current_user in controller
 
 As a user
 I want to be able to create a project
-So that I can find people who want to work with me [ IN PROGRESS ]
+So that I can find people who want to work with me [ DONE ]
+
+As a user
+I want to be able to search for projects
+So that Ic an find people to work with [ IN PROGRESS ]
