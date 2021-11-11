@@ -17,6 +17,14 @@ Rails.application.routes.draw do
     get '/logout', to: "devise/sessions#destroy"
   end
 
+  namespace :api do
+    namespace :v1 do
+      get '/users/projects', to: "projects#index"
+    end 
+  end
+
+  get "*path", to: "homes#index"
+
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

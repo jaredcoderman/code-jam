@@ -3,6 +3,7 @@ import { Route, Link } from "react-router-dom"
 import Home from "./Home"
 import NavBarLink from "./NavBarLink"
 import _ from "lodash"
+import UserProjectIndex from "./UserProjectIndex"
 
 const NavBar = () => {
   return(
@@ -32,7 +33,7 @@ const NavBar = () => {
                   href="/host" 
               />
               <NavBarLink 
-                  shouldSendHttp={true} 
+                  shouldSendHttp={false} 
                   displayText="MY PROJECTS" 
                   href="/my_projects" 
               />
@@ -40,7 +41,9 @@ const NavBar = () => {
           </div>
         </div>
       </div>
+
       <Route exact path="/" component={Home} />
+      <Route exact path="/my_projects" component={UserProjectIndex} />
     </div>
   )
 }
