@@ -6,8 +6,14 @@ So that I can learn more about the app [ DONE ]
 
 As a user
 I want to see a NavBar
-So I can move around the site more easily [ DONE ]
+So I can move around the site more easily [ MOSTLY DONE ]
+- Missing: Fetch with external component
 
 As a user
 I want to be able to navigate to the My Projects page
-So I can see a list of my projects [ IN PROGRESS ]
+So I can see a list of my projects [ DONE ]
+- Missing: Controller testing due to using current_user in controller
+
+As a user
+I want to be able to create a project
+So that I can find people who want to work with me [ IN PROGRESS ]
