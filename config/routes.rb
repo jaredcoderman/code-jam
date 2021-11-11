@@ -17,13 +17,17 @@ Rails.application.routes.draw do
     get '/logout', to: "devise/sessions#destroy"
   end
 
+  
   namespace :api do
     namespace :v1 do
       get '/users/projects', to: "projects#index"
+      get '/users/current', to: "users#current"
+      resources :projects, only: [:create]
     end 
   end
-
+  
   get "*path", to: "homes#index"
+
 
 
 

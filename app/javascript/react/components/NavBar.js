@@ -4,6 +4,7 @@ import Home from "./Home"
 import NavBarLink from "./NavBarLink"
 import _ from "lodash"
 import UserProjectIndex from "./UserProjectIndex"
+import ProjectForm from "./ProjectForm"
 
 const NavBar = () => {
   return(
@@ -44,6 +45,7 @@ const NavBar = () => {
 
       <Route exact path="/" component={Home} />
       <Route exact path="/my_projects" component={UserProjectIndex} />
+      <Route exact path="/host" component={ProjectForm} />
     </div>
   )
 }
