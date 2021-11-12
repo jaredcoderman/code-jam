@@ -27,6 +27,7 @@ const UserProjectIndex = () => {
 
   return (
     <div>
+      <h1 className="text-center">Projects</h1>
       {projects}
     </div>
   )

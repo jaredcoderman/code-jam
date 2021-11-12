@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       get '/users/projects', to: "projects#index"
       get '/users/current', to: "users#current"
+      get '/projects/:id', to: "projects#show"
+      patch '/projects', to: "projects#update"
       resources :projects, only: [:create]
     end 
   end

@@ -54,4 +54,20 @@ RSpec.describe Api::V1::ProjectsController, type: :controller do
       expect(posted_project.description).to eq("Because flying kites is fun")
     end
   end
+
+  describe "PATCH#index" do
+    it "should update the project properly" do
+      project_update_json = {
+        project: {
+          name: "It's Big Boy",
+          description: "What do you mean you don't know him",
+          id: project_one.id
+        }
+      }
+
+      put(:update, params: project_update_json, format: :json)
+      expect(Project.last.name).to eq "It's Big Boy"
+      expect(Project.last.description).to eq "What do you mean you don't know him"
+    end
+  end
 end
