@@ -18,5 +18,5 @@ I want to be able to create a project
 So that I can find people who want to work with me [ DONE ]
 
 As a user
-I want to be able to search for projects
-So that Ic an find people to work with [ IN PROGRESS ]
+I want to be able to edit a project
+In case I make a mistake or change my mind [ IN PROGRESS ]
