@@ -19,4 +19,8 @@ So that I can find people who want to work with me [ DONE ]
 
 As a user
 I want to be able to edit a project
-In case I make a mistake or change my mind [ IN PROGRESS ]
+In case I make a mistake or change my mind [ DONE ]
+
+As a user 
+I want to be able to delete a project
+In case it's done or abandoned [ IN PROGRESS ]
