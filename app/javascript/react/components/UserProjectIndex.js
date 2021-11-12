@@ -21,8 +21,12 @@ const UserProjectIndex = () => {
     fetchProjects()
   }, [])
 
+  const reRender = () => {
+    fetchProjects()
+  }
+
   const projects = fetchedProjects.map(project => {
-    return <UserProjectTile key={project.id} project={project} />
+    return <UserProjectTile reRender={reRender} key={project.id} project={project} />
   })
 
   return (

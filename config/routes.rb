@@ -23,8 +23,9 @@ Rails.application.routes.draw do
       get '/users/projects', to: "projects#index"
       get '/users/current', to: "users#current"
       get '/projects/:id', to: "projects#show"
+      delete '/projects/:id', to: "projects#destroy"
       patch '/projects', to: "projects#update"
-      resources :projects, only: [:create]
+      resources :projects, only: [:create, :destroy]
     end 
   end
   

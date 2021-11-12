@@ -23,4 +23,8 @@ In case I make a mistake or change my mind [ DONE ]
 
 As a user 
 I want to be able to delete a project
-In case it's done or abandoned [ IN PROGRESS ]
+In case it's done or abandoned [ DONE ]
+
+As a user
+I want to be able to search for projects
+So that I can find one to join [ IN PROGRESS ]

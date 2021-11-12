@@ -70,4 +70,14 @@ RSpec.describe Api::V1::ProjectsController, type: :controller do
       expect(Project.last.description).to eq "What do you mean you don't know him"
     end
   end
+
+  describe "DELETE#index" do
+    it "should delete a project from the list" do
+
+      previous_project_count = Project.count
+      delete :destroy, params: { id: Project.last.id }
+      expect(Project.count).to eq (previous_project_count - 1)
+
+    end
+  end
 end
