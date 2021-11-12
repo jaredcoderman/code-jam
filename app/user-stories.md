@@ -26,5 +26,9 @@ I want to be able to delete a project
 In case it's done or abandoned [ DONE ]
 
 As a user
+I want to be able to click a project
+So I can see more details about it [ DONE ]
+
+As a user
 I want to be able to search for projects
 So that I can find one to join [ IN PROGRESS ]

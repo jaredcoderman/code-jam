@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Redirect } from "react-router-dom"
+import ProjectShow from "./ProjectShow"
 
 const ProjectEditForm = props => {
   const { id } = props.match.params
@@ -57,7 +58,7 @@ const ProjectEditForm = props => {
   }
 
   if(postResponse.includes("successfully")) {
-    return <Redirect to="/my_projects" />
+    return <Redirect to={`/projects/${id}`} />
   }
 
   return(

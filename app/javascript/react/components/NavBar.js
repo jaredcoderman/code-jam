@@ -6,6 +6,7 @@ import _ from "lodash"
 import UserProjectIndex from "./UserProjectIndex"
 import ProjectForm from "./ProjectForm"
 import ProjectEditForm from "./ProjectEditForm"
+import ProjectShow from "./ProjectShow"
 
 const NavBar = () => {
   return(
@@ -25,12 +26,12 @@ const NavBar = () => {
           <div className="top-bar-right">
             <ul className="menu">
               <NavBarLink 
-                  shouldSendHttp={true} 
+                  shouldSendHttp={false} 
                   displayText="FIND"
                   href="/find" 
               />
               <NavBarLink 
-                  shouldSendHttp={true} 
+                  shouldSendHttp={false} 
                   displayText="HOST" 
                   href="/host" 
               />
@@ -48,6 +49,7 @@ const NavBar = () => {
       <Route exact path="/my_projects" component={UserProjectIndex} />
       <Route exact path="/host" component={ProjectForm} />
       <Route exact path="/projects/:id/edit" component={ProjectEditForm} />
+      <Route exact path="/projects/:id" component={ProjectShow} />
     </div>
   )
 }
