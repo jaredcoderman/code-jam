@@ -83,7 +83,7 @@ const ProjectEditForm = props => {
             value={formData.description} 
           />
         </label>
-        <input type="submit" className="button" value="Create Project" />
+        <input type="submit" className="button" value="Submit" />
       </form>
     </div>
   )

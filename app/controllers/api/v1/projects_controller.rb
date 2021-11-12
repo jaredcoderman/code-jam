@@ -32,6 +32,10 @@ class Api::V1::ProjectsController < ApiController
     end
   end
 
+  def destroy 
+    Project.find(params[:id]).delete
+  end
+
   private 
 
   def project_params
