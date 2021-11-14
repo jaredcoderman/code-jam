@@ -1,17 +1,17 @@
-class Api::V1::ProjectsController < ApiController
+class Api::V1::ProjectsController < ApplicationController
   
   def index 
     @projects = current_user.projects
     render json: { projects: @projects }
   end
 
-  def show 
+  def show
     render json: { project: Project.find(params["id"])}
   end
 
   def create
     @project = Project.new(project_params)
-    @project.users << User.find(user_params["id"])
+    @project.users << current_user
     if @project.save
       render json: {response: "Project created successfully"}
     else  

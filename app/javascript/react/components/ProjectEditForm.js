@@ -9,8 +9,7 @@ const ProjectEditForm = props => {
     name: "",
     description: ""
   })
-
-  const [currentUser, setCurrentUser] = useState({})
+  
   const [postResponse, setPostResponse] = useState("")
 
   const handleChange = event => {
@@ -20,12 +19,6 @@ const ProjectEditForm = props => {
     })
   }
 
-  const fetchCurrentUser = async () => {
-    const response = await fetch("/api/v1/users/current")
-    const responseBody = await response.json()
-    setCurrentUser(responseBody.user)
-  }
-
   const fetchProject = async () => {
     const response = await fetch(`/api/v1/projects/${id}`)
     const responseBody = await response.json()
@@ -33,7 +26,6 @@ const ProjectEditForm = props => {
   }
 
   useEffect(() => {
-    fetchCurrentUser()
     fetchProject()
   }, [])
 
@@ -46,7 +38,7 @@ const ProjectEditForm = props => {
       body: JSON.stringify({project: {
         ...formData,
         id: id
-      }, user: currentUser})
+      }})
     })
     const responseBody = await response.json()
   setPostResponse(responseBody.response)
