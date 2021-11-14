@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/logout', to: "devise/sessions#destroy"
   end
-  
+
   namespace :api do
     namespace :v1 do
       get '/users/projects', to: "projects#index"
@@ -27,9 +27,13 @@ Rails.application.routes.draw do
       resources :projects, only: [:create, :destroy]
     end 
   end
-  
-  get "*path", to: "homes#index"
 
+  get '/projects/:id', to: "homes#index"
+  get '/host', to: "homes#index"
+  get '/my_projects', to: "homes#index"
+  get '/search', to: "projects#search"
+  
+  resources :projects, only: [:index, :search]  
 
 
 
