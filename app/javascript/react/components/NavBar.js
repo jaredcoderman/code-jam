@@ -26,9 +26,9 @@ const NavBar = () => {
           <div className="top-bar-right">
             <ul className="menu">
               <NavBarLink 
-                  shouldSendHttp={false} 
+                  shouldSendHttp={true} 
                   displayText="FIND"
-                  href="/find" 
+                  href="/projects" 
               />
               <NavBarLink 
                   shouldSendHttp={false} 

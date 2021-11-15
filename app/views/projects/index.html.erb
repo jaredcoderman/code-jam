@@ -1,0 +1,29 @@
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="menu">
+      <li class="menu-text">CodeJam</li>
+        <a href="/">HOME</a>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <a href="/projects">FIND</a>
+      <a href="/host">HOST</a>
+      <a href="/my_projects">MY PROJECTS</a>
+    </ul>
+  </div>
+</div>
+
+<%= form_with url: "/search", method: :get do |form| %>
+  <%= form.label :query, "Search for:" %>
+  <%= form.text_field :query %>
+  <%= form.submit "Search", class: "button" %>
+<% end %>
+
+<% if @projects %>
+  <% @projects.each do |project| %>
+    <h2><%= link_to project.name, "/projects/#{project.id}" %> </h2>
+    <h4><%= project.description %> </h4>
+    <hr />
+  <% end %>
+<% end %>

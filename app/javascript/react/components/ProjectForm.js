@@ -6,7 +6,6 @@ const ProjectForm = () => {
     name: "",
     description: ""
   })
-  const [currentUser, setCurrentUser] = useState({})
   const [postResponse, setPostResponse] = useState("")
 
   const handleChange = event => {
@@ -16,23 +15,15 @@ const ProjectForm = () => {
     })
   }
 
-  const fetchCurrentUser = async () => {
-    const response = await fetch("/api/v1/users/current")
-    const responseBody = await response.json()
-    setCurrentUser(responseBody.user)
-  }
-
-  useEffect(() => {
-    fetchCurrentUser()
-  }, [])
-
   const postProject = async () => {
     const response = await fetch("/api/v1/projects", {
       method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        "Accept": "application/json"
       },
-      body: JSON.stringify({project: formData, user: currentUser})
+      body: JSON.stringify({project: formData}),
+      credentials: "same-origin",
     })
     const responseBody = await response.json()
     setPostResponse(responseBody.response)
