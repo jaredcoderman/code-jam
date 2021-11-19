@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&display=swap');
+
+.home-title {
+  margin-top: 8rem;
+  color: #3d3d3d;
+}
+
+.home-flavor-text {
+  margin-top: 1rem;
+  color: #666666;
+  font-weight: 100;
+  margin-bottom: 2.5rem;
+}
+
+.home-get-started {
+  width: 10rem;
+  border: solid 1px black;
+  padding: 12.5px;
+  font-size: 18px;
+  border-radius: 10px;
+  color: #666666;
+}
+
+.home-get-started:hover {
+  transition: .4s;
+  background-color: #666666;
+  color: #ffe599ff;
+  border: solid 1px #666666;
+}
