@@ -1,0 +1,59 @@
+.project-label {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+}
+
+.project-field {
+  border: solid 2px black;
+  border-radius: 10px;
+  background-color: #7b8792;
+  width: 45%;
+}
+
+.project-text-area {
+  border-radius: 10px;
+  border: solid 2px black;
+  background-color: #7b8792;
+  font-size: 14px;
+  width: 80%;
+  height: 100%;
+}
+
+.project-title {
+  font-size: 80px;  
+  text-align: center;
+}
+
+.project-text-area:hover {
+  border: solid 2px #fe4027;
+  border-radius: 10px;
+  background-color: #232322;
+  font-size: 14px;
+  color: #7b8792;
+}
+
+.project-field:focus {
+  border: solid 2px #fe4027;
+  border-radius: 10px;
+  background-color: #232322;
+  color: #7b8792;
+}
+
+.submit-button {
+  margin-left: 23rem;
+  border: solid 2px black;
+  border-radius: 10px;
+}
+
+.submit-button:hover {
+  transition: .25s;
+  color: #fe4027;
+  background-color: rgb(35, 35, 35) ;
+  border-color: #fe4027;
+  text-shadow: 
+  2px 2px black,
+  3px 3px black,
+  4px 4px black;
+}

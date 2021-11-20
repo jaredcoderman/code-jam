@@ -10,10 +10,6 @@
   margin-top: .75rem;
 }
 
-.nav-home-button {
-  color: black;
-}
-
 .top-bar-left ul {
   margin: 0;
 }
@@ -21,11 +17,6 @@
 .top-bar-left ul li {
   margin-top: auto;
   margin-bottom: auto;
-}
-
-.nav-home-button:hover {
-  transition: .25s;
-  color: #fe4027;
 }
 
 .top-bar-right a {
@@ -40,7 +31,7 @@
 .top-bar-right a:hover {
   transition: .25s;
   color: #fe4027;
-  background-color: rgb(22, 22, 22);
+  background-color: rgb(35, 35, 35) ;
   border-color: #fe4027;
   text-shadow: 
   2px 2px black,
@@ -48,8 +39,15 @@
   4px 4px black;
 }
 
-.menu-text {
+.menu-text a{
   color: #fe4027 !important;
+  font-size: 36px;
   text-shadow: 
   2px 2px black,
+}
+
+.menu-text a:hover {
+  color: black !important;
+  text-shadow:
+  2px 2px #77818b;
 }

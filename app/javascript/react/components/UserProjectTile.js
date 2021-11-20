@@ -13,7 +13,6 @@ const UserProjectTile = props => {
             </Link>
           </h2>
         <h4 className="cell small-11">{project.description}</h4>
-        <h4 className="cell small-11">Owner: {project.owner.name}</h4>
       </div>
       <hr />
     </div>
