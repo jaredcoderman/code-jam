@@ -1,0 +1,38 @@
+.home-title {
+  margin-top: 6rem;
+  color: black;
+  font-size: 80px;
+  text-shadow:
+  2px 2px #77818b;
+}
+
+.home-flavor-text {
+  margin-top: 1rem;
+  color: #fe4027;
+  font-weight: 500;
+  margin-bottom: 3rem;
+  text-shadow: 
+  2px 2px black,
+}
+
+.home-get-started {
+  width: 10rem;
+  border: solid 2px black;
+  padding: 12.5px;
+  font-size: 18px;
+  border-radius: 10px;
+  color: black;
+  text-shadow:
+  .5px .5px #77818b;
+}
+
+.home-get-started:hover {
+  transition: .25s;
+  color: #fe4027;
+  border: solid 2px #fe4027;
+  background-color: rgb(35, 35, 35);
+  text-shadow: 
+  2px 2px black,
+  3px 3px black,
+  4px 4px black;
+}
