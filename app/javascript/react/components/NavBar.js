@@ -7,39 +7,49 @@ import UserProjectIndex from "./UserProjectIndex"
 import ProjectForm from "./ProjectForm"
 import ProjectEditForm from "./ProjectEditForm"
 import ProjectShow from "./ProjectShow"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faHome, faLaptopCode } from "@fortawesome/free-solid-svg-icons"
+import SessionLinks from "./SessionLinks"
+import fetchUser from "../../apiClient/fetchUser"
 
 const NavBar = () => {
+
+  const [user, setUser] = useState({})
+  
+  useEffect(() => {
+    fetchUser().then(user => {
+      setUser(user)
+    })
+  }, [])
+
   return(
     <div>
       <div>
         <div className="top-bar">
           <div className="top-bar-left">
             <ul className="menu">
-              <li className="menu-text">CodeJam</li>
-                <NavBarLink 
-                  shouldSendHttp={false} 
-                  displayText="HOME" 
-                  href="/" 
-                />
+              <Link to="/"><FontAwesomeIcon className="nav-home-button" size={"2x"} icon={faHome} /></Link>
+              <li className="menu-text">CodeJam <FontAwesomeIcon icon={faLaptopCode}/></li>
             </ul>
           </div>
           <div className="top-bar-right">
             <ul className="menu">
               <NavBarLink 
-                  shouldSendHttp={true} 
-                  displayText="FIND"
-                  href="/projects" 
+                shouldSendHttp={true} 
+                displayText="FIND"
+                href="/projects" 
               />
               <NavBarLink 
-                  shouldSendHttp={false} 
-                  displayText="HOST" 
-                  href="/host" 
+                shouldSendHttp={false} 
+                displayText="HOST" 
+                href="/host" 
               />
               <NavBarLink 
-                  shouldSendHttp={false} 
-                  displayText="MY PROJECTS" 
-                  href="/my_projects" 
+                shouldSendHttp={false} 
+                displayText="MY PROJECTS" 
+                href="/my_projects" 
               />
+              <SessionLinks user={user} />
             </ul>
           </div>
         </div>
