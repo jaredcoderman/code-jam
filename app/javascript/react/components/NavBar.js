@@ -8,7 +8,7 @@ import ProjectForm from "./ProjectForm"
 import ProjectEditForm from "./ProjectEditForm"
 import ProjectShow from "./ProjectShow"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faHome, faLaptopCode } from "@fortawesome/free-solid-svg-icons"
+import { faCode } from "@fortawesome/free-solid-svg-icons"
 import SessionLinks from "./SessionLinks"
 import fetchUser from "../../apiClient/fetchUser"
 
@@ -28,8 +28,7 @@ const NavBar = () => {
         <div className="top-bar">
           <div className="top-bar-left">
             <ul className="menu">
-              <Link to="/"><FontAwesomeIcon className="nav-home-button" size={"2x"} icon={faHome} /></Link>
-              <li className="menu-text">CodeJam <FontAwesomeIcon icon={faLaptopCode}/></li>
+              <li className="menu-text"><Link to="/">CodeJam <FontAwesomeIcon icon={faCode}/></Link></li>
             </ul>
           </div>
           <div className="top-bar-right">

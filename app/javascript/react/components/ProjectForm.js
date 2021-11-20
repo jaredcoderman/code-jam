@@ -41,27 +41,29 @@ const ProjectForm = () => {
   return(
     <div>
       <p>{postResponse}</p>
-      <h1 className="text-center">Create A Project</h1>
+      <h1 className="project-title black-and-blue-text">Create A Project</h1>
       <form onSubmit={handleSubmit}>
-        <label>
+        <label className="project-label black-and-blue-text">
             Name
             <input 
               type="text" 
               name="name" 
               onChange={handleChange} 
               value={formData.name} 
+              className="project-field"
             />
         </label>
-        <label>
+        <label className="project-label black-and-blue-text">
           Description
-          <input 
+          <textarea 
             type="text" 
             name="description" 
             onChange={handleChange} 
             value={formData.description} 
+            className="project-text-area"
           />
         </label>
-        <input type="submit" className="button" value="Create Project" />
+        <input type="submit" className="submit-button black-and-blue-text" value="Create Project" />
       </form>
     </div>
   )

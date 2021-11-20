@@ -11,6 +11,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 gem 'omniauth-github'
 gem "omniauth-rails_csrf_protection", "~> 1.0"
+gem 'font-awesome-rails'
 
 
 gem 'jbuilder', '~> 2.5'
