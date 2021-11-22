@@ -1,0 +1,54 @@
+.callout.secondary {
+  border: solid 2px #fe4027;
+  border-radius: 10px;
+  background-color: #0f0f0f;
+}
+
+.my-projects-title {
+  color: #77818b;
+  text-shadow: 
+  4px 4px black,
+  5px 5px black,
+  6px 6px black;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 70px;
+}
+
+.callout.secondary a {
+  color: #fe4027;
+  background-color: #0f0f0f;
+  font-weight: 900;
+  text-shadow: 
+  2px 2px black,
+  3px 3px black,
+  4px 4px black;
+}
+
+.callout.secondary:hover a {
+  transition:.2s;
+  color: #feac27;
+  background-color: #0f0f0f;;
+  font-weight: 900;
+  text-shadow: 
+  2px 2px black,
+  3px 3px black,
+  4px 4px black;
+}
+
+.callout.secondary:hover {
+transition: .2s;
+  border: solid 2px #feac27;
+  border-radius: 10px;
+  background-color: #0f0f0f;
+}
+
+
+.project-text {
+  font-weight: 300;
+  color: #77818b;
+  padding: 7.5px;
+  background-color: #0f0f0f;
+  text-shadow:
+  3px 3px black;
+}

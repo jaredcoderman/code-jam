@@ -30,9 +30,11 @@ const UserProjectIndex = () => {
   })
 
   return (
-    <div>
-      <h1 className="text-center">Projects</h1>
-      {projects}
+    <div className="grid-container">
+      <h1 className="my-projects-title">Projects</h1>
+      <div className="grid-x grid-margin-x">
+        {projects}
+      </div>
     </div>
   )
 }

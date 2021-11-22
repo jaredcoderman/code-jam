@@ -11,7 +11,7 @@ class Api::V1::ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    @project.owner = current_user.id
+    @project.owner = current_user
     @project.users << current_user
     if @project.save
       render json: {response: "Project created successfully"}

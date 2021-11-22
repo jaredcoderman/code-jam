@@ -1,9 +1,11 @@
 .home-title {
   margin-top: 6rem;
-  color: black;
+  color: #77818b;
   font-size: 80px;
-  text-shadow:
-  2px 2px #77818b;
+  text-shadow: 
+  4px 4px black,
+  5px 5px black,
+  6px 6px black;
 }
 
 .home-flavor-text {
@@ -17,22 +19,22 @@
 
 .home-get-started {
   width: 10rem;
-  border: solid 2px black;
   padding: 12.5px;
   font-size: 18px;
   border-radius: 10px;
-  color: black;
-  text-shadow:
-  .5px .5px #77818b;
-}
-
-.home-get-started:hover {
-  transition: .25s;
-  color: #fe4027;
-  border: solid 2px #fe4027;
+  color: #77818b;
+  border: solid 2px #77818b;
   background-color: rgb(35, 35, 35);
   text-shadow: 
   2px 2px black,
   3px 3px black,
   4px 4px black;
+}
+
+.home-get-started:hover {
+  transition: .25s;
+  padding: 13px;
+  font-size: 20px;
+  color: #fe4027;
+  border: solid 2px #fe4027;
 }

@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
 
   def index 
-    @current_user = current_user
   end
 
   def search
