@@ -32,3 +32,7 @@ So I can see more details about it [ DONE ]
 As a user
 I want to be able to search for projects
 So that I can find one to join [ DONE ]
+
+As a user
+I want to be able to request to join a project
+So that I can be a part of a team [ IN PROGRESS ]
