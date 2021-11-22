@@ -9,11 +9,34 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="menu">
+        <li class="menu-text"><a href="/">CodeJam <%= fa_icon "code" %></a></li>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <a href="/projects">FIND</a>
+        <a href="/host">HOST</a>
+        <a href="/my_projects">MY PROJECTS</a>
+        <% if !current_user %>
+          <a href="/login">LOGIN</a>
+          <a href="/signup">SIGN UP</a>
+        <% else %>
+          <a href="/logout">LOGOUT</a>
+        <% end %>
+      </ul>
+    </div>
+  </div>
   
 
   <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
+    <div class="flash-container">
+      <div class="flash flash-<%= key %>">
+        <%= value %><button class="x-button"><%= fa_icon "times-circle", class: "fa-lg" %></button>
+      </div>
     </div>
   <%- end -%>
 

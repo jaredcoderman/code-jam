@@ -6,10 +6,22 @@ body, h1, h4 {
   background-color: #232323;
 }
 
-.flash {
-  color: white;
-  display: block;
-  background-color: green;
+.flash-container {
+  color: black;
+  background-color: #51d474;
+  padding: 10px;
+  
+  text-shadow:
+  1.5px 1.5px #77818b;
+  margin-top: .5rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  border: solid 2px #171717;
+  border-radius: 10px;
+}
+
+.x-button {
+  float: right;
 }
 
 .black-and-blue-text {

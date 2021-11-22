@@ -51,6 +51,7 @@ const ProjectForm = () => {
               onChange={handleChange} 
               value={formData.name} 
               className="project-field"
+              autoComplete="off"
             />
         </label>
         <label className="project-label black-and-blue-text">
@@ -61,6 +62,7 @@ const ProjectForm = () => {
             onChange={handleChange} 
             value={formData.description} 
             className="project-text-area"
+            autoComplete="off"
           />
         </label>
         <input type="submit" className="submit-button black-and-blue-text" value="Create Project" />

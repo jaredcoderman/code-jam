@@ -6,16 +6,18 @@
 }
 
 .project-field {
-  border: solid 2px black;
+  border: solid 2px #fe4027 !important;
   border-radius: 10px;
-  background-color: #7b8792;
+  background-color: #232322 !important;
+  color: #7b8792;
   width: 45%;
 }
 
 .project-text-area {
   border-radius: 10px;
-  border: solid 2px black;
-  background-color: #7b8792;
+  border: solid 2px #fe4027 !important;
+  background-color: #232322 !important;
+  color: #7b8792;
   font-size: 14px;
   width: 80%;
   height: 100%;
@@ -24,6 +26,11 @@
 .project-title {
   font-size: 80px;  
   text-align: center;
+  color: #77818b;
+  text-shadow: 
+  4px 4px black,
+  5px 5px black,
+  6px 6px black;
 }
 
 .project-text-area:hover {
@@ -43,7 +50,7 @@
 
 .submit-button {
   margin-left: 23rem;
-  border: solid 2px black;
+  border: solid 2px #77818b;
   border-radius: 10px;
 }
 
