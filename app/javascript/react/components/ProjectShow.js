@@ -39,10 +39,9 @@ const ProjectShow = props => {
 
   return (
     <div>
-      <div className="grid-x">
-        <h1 className="cell small-12 text-center">{project.name}</h1>
-        
-        <h3 className="cell small-12 text-center">{project.description}</h3>
+      <div className="project-show-header">
+        <h1 className="project-show-title black-and-blue-text">{project.name}</h1>
+        <h3 className="project-show-desc">{project.description}</h3>
       </div>
       <div className="grid-x text-center">
         <div className="cell small-5" />
