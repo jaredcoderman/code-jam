@@ -9,16 +9,12 @@ const ProjectShow = props => {
   const [deleteRedirect, setDeleteRedirect] = useState(false)
   const [userRole, setUserRole] = useState("viewer")
   const [joinResponse, setJoinResponse] = useState("")
-  const [userRequests, setUserRequests] = useState([])
-  const [users, setUsers] = useState([])
 
   const fetchProject = async () => {
     const response = await fetch(`/api/v1/projects/${id}`)
     const responseBody = await response.json()
     setProject(responseBody.project)
-    setUserRole(responseBody.role)
-    setUserRequests(responseBody.requests)
-    setUsers(responseBody.users)
+    setUserRole(responseBody.project.role)
   }
 
   useEffect(() => {
@@ -80,9 +76,10 @@ const ProjectShow = props => {
   if(userRole == "viewer") {
     button = <button onClick={postJoin} className="button">JOIN</button>
   }
+  
   let requests
-  if(userRole == "owner") {
-    requests = userRequests.map(request => {
+  if(userRole == "owner" && !_.isEmpty(project)) {
+    requests = project.requests.map(request => {
       const acceptRequest = () => {
         postAccept(request.id)
       }
@@ -90,9 +87,13 @@ const ProjectShow = props => {
     })
   }
 
-  let userTiles = users.map(user => {
-    return <p>{user.name}</p>
-  })
+  let userTiles
+  if(!_.isEmpty(project)) {
+    userTiles = project.users.map(user => {
+      return <p>{user.name}</p>
+    })
+  }
+
 
   return (
     <div>

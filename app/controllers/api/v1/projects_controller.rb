@@ -6,15 +6,8 @@ class Api::V1::ProjectsController < ApplicationController
   end
 
   def show
-    project = Project.find(params["id"])
-    role = "viewer"
-    if project.users.include?(current_user)
-      role = "member"
-      if project.owner = current_user 
-        role = "owner"
-      end
-    end
-    render json: {project: project, role: role, requests: project.user_requests, users: project.users}
+    @project = Project.find(params["id"])
+    render json: @project
   end
 
   def join
