@@ -10,4 +10,6 @@ class Project < ApplicationRecord
 
   has_many :join_requests
   has_many :user_requests, through: :join_requests, source: :user
+
+  has_many :comments
 end

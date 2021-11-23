@@ -8,12 +8,17 @@
 
 Project.all.delete_all
 User.all.delete_all
+Comment.all.delete_all
 
 u1 = User.create(name: "Jared Head",  email: "jared@gmail.com", password: "jared123")
 
 p1 = Project.create(name: "Python Webscraper", description: "Aggregates all event data within 10 miles of your location.", owner: u1)
 p2 = Project.create(name: "To-Do List", description: "A helpful tool to keep track of the tasks you need to complete.", owner: u1)
 p3 = Project.create(name: "Quiz Game", description: "A 4 player quiz game for friends to test how well they know each other.", owner: u1)
+
+c1 = Comment.create(project: p1, user: u1, description: "Hey guys can't wait to get working with y'all!")
+c1 = Comment.create(project: p1, user: u1, description: "It's a little lonely here, is anyone out there?!")
+c1 = Comment.create(project: p1, user: u1, description: "I'm just commenting for no reason at this point...")
 
 up1 = UserProject.create(user: u1, project: p1)
 up2 = UserProject.create(user: u1, project: p2)
