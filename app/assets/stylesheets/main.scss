@@ -31,3 +31,8 @@ body, h1, h4 {
   text-shadow:
   3px 3px black;
 }
+
+.grid-container {
+  overflow: auto;
+  height: 100vh;
+}
