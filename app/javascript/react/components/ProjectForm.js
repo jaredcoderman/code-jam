@@ -41,7 +41,7 @@ const ProjectForm = () => {
   return(
     <div>
       <p>{postResponse}</p>
-      <h1 className="project-title black-and-blue-text">Create A Project</h1>
+      <h1 className="project-title black-and-blue-text">Create a Project</h1>
       <form onSubmit={handleSubmit}>
         <label className="project-label black-and-blue-text">
             Name

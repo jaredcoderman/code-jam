@@ -7,4 +7,7 @@ class Project < ApplicationRecord
   has_many :users, through: :user_projects
 
   belongs_to :owner, class_name: "User"
+
+  has_many :join_requests
+  has_many :user_requests, through: :join_requests, source: :user
 end
