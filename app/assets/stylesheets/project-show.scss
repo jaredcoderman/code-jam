@@ -1,6 +1,6 @@
 .project-show-title {
   text-align: center;
-  font-size: 70px;
+  font-size: 65px;
   color: #77818b;
   text-decoration: underline;
   text-shadow:
@@ -50,6 +50,7 @@
   border: solid 2px black;
   padding: 2rem;
   height: 100vh;
+  overflow: auto;
 }
 
 .user-tile {
@@ -62,6 +63,7 @@
   margin-left: 2.5%;
   padding: 3px;
   border-bottom: solid 2px #fe4027;
+  
 }
 
 .show-sub-header {
@@ -72,4 +74,63 @@
   border-radius: 5px;
   text-shadow:
   3px 3px black;
+  margin-bottom: 1rem;  
+  text-align: center;
+}
+
+.show-comment-container {
+  background-color: #282828;
+  border-radius: 10px;
+  border-bottom: solid 2px  #fe4027;
+  color: #fe4027;
+  margin-top: 1rem;
+}
+
+.comment-author {
+  padding-top: 5px;
+  color: #fe4027;
+  font-weight: 300; 
+  text-shadow:
+  2px 2px black;
+  text-align: left;
+  font-size: 14px;
+  margin-left: 1rem;
+}
+
+.comment-body {
+  background-color: #282828;
+  text-align: left;
+  margin-left: 1rem;
+  text-shadow:
+  2px 2px black;
+}
+
+.comment-date {
+  padding-top: 5px;
+  text-align: left;
+  color: #fe4027;
+  font-weight: 300; 
+  text-shadow:
+  2px 2px black;
+  font-size: 14px;
+  margin-left: 1rem;
+}
+
+.show-submit-button {
+  border: solid 2px #77818b;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #77818b;
+  padding: 5px;
+}
+
+.show-submit-button:hover {
+  transition: .25s;
+  color: #fe4027;
+  background-color: rgb(35, 35, 35) ;
+  border-color: #fe4027;
+  text-shadow: 
+  2px 2px black,
+  3px 3px black,
+  4px 4px black;
 }

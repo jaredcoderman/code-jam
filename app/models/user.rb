@@ -25,4 +25,6 @@ class User < ApplicationRecord
 
   has_many :join_requests 
   has_many :project_requests, through: :join_requests, source: :project
+
+  has_many :comments
 end

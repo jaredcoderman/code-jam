@@ -25,6 +25,8 @@ Rails.application.routes.draw do
       patch '/projects', to: "projects#update"
       patch '/projects/join', to: "projects#join"
       patch '/projects/accept', to: "projects#accept"
+      post "/projects/:id/comments", to: "comments#create"
+      resources :comments, only: [:create, :index]
       resources :projects, only: [:create, :destroy, :show]
     end 
   end
