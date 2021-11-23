@@ -86,7 +86,11 @@ const ProjectShow = props => {
       const acceptRequest = () => {
         postAccept(request.id)
       }
-      return <button onClick={acceptRequest} className="button">{request.name}</button>
+      return <button 
+              onClick={acceptRequest} 
+              className="button">
+                {request.name}
+              </button>
     })
   }
 
@@ -168,7 +172,13 @@ const ProjectShow = props => {
           <div className="cell small-9">
             <h4 className="show-sub-header">COMMENTS</h4>
             <form onSubmit={handleSubmit}>
-              <textarea className="project-text-area wide" name="description" placeholder="Leave a comment..." value={comment} onChange={handleChange}></textarea>
+              <textarea 
+                className="project-text-area wide" 
+                name="description" 
+                placeholder="Leave a comment..." 
+                value={comment} 
+                onChange={handleChange}>
+              </textarea>
               <input type="submit" value="Comment" className="show-submit-button" />
             </form>
             {comments}

@@ -10,7 +10,7 @@ class Api::V1::CommentsController < ApplicationController
     comment.user = user
     comment.project = project
     if comment.save 
-      render json: {comment: {id: comment.id, description: comment.description, author: comment.user.name, formatted_date: comment.created_at.strftime("%B %d %Y")}}
+      render json: comment
     else  
       render json: {response: "Error adding comment"}
     end
