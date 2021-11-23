@@ -2,11 +2,12 @@
   text-align: center;
   font-size: 65px;
   color: #77818b;
-  text-decoration: underline;
   text-shadow:
   2px 2px black,
   3px 3px black,
   4px 4px black;
+  width: 90%;
+  margin-left: 5%;
 }
 
 .project-show-desc {
@@ -15,22 +16,27 @@
   font-weight: 300;
   font-size: 30px;
   text-shadow: 
-  .2px .2px black;
-}
-
-.show-button {
-  display: inline;
-  border: solid 2px #77818b;
-  padding: 10px;
-  color: #77818b;
-  border-radius: 10px;
-  float: right;
+  2px 2px black,
+  3px 3px black,
+  4px 4px black;
 }
 
 .show-header-container {
-  background-color: #232323;
-  border: solid 2px #77818b; 
-  margin-bottom: 3rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding-bottom: .45rem;
+}
+
+.show-button {
+  border: solid 2px #fd4576;
+  padding: 15px;
+  color: #fd4576;
+  background-color: #171717;
+  border-radius: 10px;
+  float: left;
+  margin-left: 1rem;
+  margin-top: 1rem; 
 }
 
 .show-button:hover {
@@ -44,18 +50,9 @@
   4px 4px black;
 }
 
-.black-background {
-  margin-top: 3rem;
-  background-color: #171717;
-  border: solid 2px black;
-  padding: 2rem;
-
-  overflow: auto;
-}
-
 .user-tile {
   color: #fe4027;
-  background-color: #232323;
+  background-color: #171717;
   margin-top: 1rem;
   border-radius: 10px;
   font-size: 20px;
@@ -69,7 +66,7 @@
 .show-sub-header {
   color: #77818b;
   padding: 7.5px;
-  background-color: #232323;
+  background-color: #171717;
   border: solid 2px #77818b; 
   border-radius: 5px;
   text-shadow:
@@ -79,7 +76,7 @@
 }
 
 .show-comment-container {
-  background-color: #282828;
+  background-color: #171717;
   border-radius: 10px;
   border-bottom: solid 2px  #fe4027;
   color: #fe4027;
@@ -98,7 +95,7 @@
 }
 
 .comment-body {
-  background-color: #282828;
+  background-color: #171717;
   text-align: left;
   margin-left: 1rem;
   text-shadow:
@@ -121,7 +118,7 @@
   border-radius: 10px;
   background-color: transparent;
   color: #77818b;
-  padding: 5px;
+  padding: 10px;
 }
 
 .show-submit-button:hover {
@@ -133,4 +130,27 @@
   2px 2px black,
   3px 3px black,
   4px 4px black;
+}
+
+.show-margin {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+.request-tile {
+  color: #77818b;
+  background-color: #171717;
+  margin-top: 1rem;
+  border-radius: 10px;
+  height: 2.75rem;
+  font-size: 20px;
+  width: 95%;
+  margin-left: 2.5%;
+  padding: 3px;
+  border-bottom: solid 2px #77818b;
+}
+
+.request-tile:hover {
+  color: #fd4576;
+  border-color: #fd4576;
 }

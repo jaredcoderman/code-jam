@@ -61,13 +61,17 @@ const ProjectShow = props => {
       credentials: "same-origin",
       body: JSON.stringify({project: {id: id}, user: {id: userId}})
     })
-    const responseBody = response.json()
-    if(responseBody.response == "User joined successfully") {
-      setUserRole("member")
+    const responseBody = await response.json()
+    if(responseBody.response == "User added successfully") {
+      setProject({
+        ...project,
+        users: project.users.concat(responseBody.user),
+        requests: project.requests.filter(user => user.id !== responseBody.user.id)
+      })
     }
   }
 
-  if(deleteRedirect) {
+  if(deleteRedirect) {  
     return <Redirect to="/my_projects" />
   }
 
@@ -75,9 +79,20 @@ const ProjectShow = props => {
     return <Redirect to={`/projects/${project.id}/edit`} />
   }
 
-  let button  
+  let joinButton  
   if(userRole == "viewer") {
-    button = <button onClick={postJoin} className="button">JOIN</button>
+    joinButton = <button onClick={postJoin} className="show-button">JOIN</button>
+  }
+
+  let editButton
+  let deleteButton
+  if(userRole == "owner") {
+    editButton = <button className="show-button" onClick={editFunc}>
+                  Edit
+                 </button> 
+    deleteButton = <button className="show-button" onClick={deleteFunc}>
+                    Delete
+                   </button>
   }
   
   let requests
@@ -88,7 +103,7 @@ const ProjectShow = props => {
       }
       return <button 
               onClick={acceptRequest} 
-              className="button">
+              className="request-tile">
                 {request.name}
               </button>
     })
@@ -151,47 +166,42 @@ const ProjectShow = props => {
   }
 
   return (
-    <div className="grid-container gray">
-      <div className="black-background">
-        {error}
-        {joinResponse}
-        <div className="show-header-container">
-          <h1 className="project-show-title">
-            {project.name} 
-          </h1>
-          <button className="show-button" onClick={deleteFunc}>
-              Delete
-          </button>
-          <button className="show-button" onClick={editFunc}>
-            Edit
-          </button>
-          {button}
-          <p className="project-show-desc">{project.description}</p>
+    <div>
+      {deleteButton}
+      {editButton}
+      {joinButton}
+      <div className="show-margin">
+      {error}
+      {joinResponse}
+      <div className="show-header-container">
+        <h1 className="project-show-title">
+          {project.name} 
+        </h1>
+        <p className="project-show-desc">{project.description}</p>
+      </div>
+      <div className="text-left grid-x grid-margin-x">
+        <div className="cell small-9">
+          <h4 className="show-sub-header">COMMENTS</h4>
+          <form onSubmit={handleSubmit}>
+            <textarea 
+              className="project-text-area wide" 
+              name="description" 
+              placeholder="Leave a comment..." 
+              value={comment} 
+              onChange={handleChange}>
+            </textarea>
+            <input type="submit" value="Comment" className="show-submit-button" />
+          </form>
+          {comments}
         </div>
-        <div className="text-left grid-x grid-margin-x">
-          <div className="cell small-9">
-            <h4 className="show-sub-header">COMMENTS</h4>
-            <form onSubmit={handleSubmit}>
-              <textarea 
-                className="project-text-area wide" 
-                name="description" 
-                placeholder="Leave a comment..." 
-                value={comment} 
-                onChange={handleChange}>
-              </textarea>
-              <input type="submit" value="Comment" className="show-submit-button" />
-            </form>
-            {comments}
-          </div>
-          <div className="text-center cell small-3">
-            <h4 className="show-sub-header">MEMBERS</h4>
-            {userTiles}
-          </div>
+        <div className="text-center cell small-3">
+          <h4 className="show-sub-header">MEMBERS</h4>
           {requests}
+          {userTiles}
         </div>
       </div>
     </div>
-
+    </div>
   )
 }
 
