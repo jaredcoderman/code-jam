@@ -22,4 +22,7 @@ class User < ApplicationRecord
   has_many :projects, through: :user_projects
 
   has_many :owned_projects, class_name: "Project", foreign_key: "owner_id"
+
+  has_many :join_requests 
+  has_many :project_requests, through: :join_requests, source: :project
 end

@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_181351) do
+ActiveRecord::Schema.define(version: 2021_11_22_193427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "join_requests", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_join_requests_on_project_id"
+    t.index ["user_id"], name: "index_join_requests_on_user_id"
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string "name", null: false

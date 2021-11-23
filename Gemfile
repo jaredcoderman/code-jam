@@ -12,6 +12,7 @@ gem 'devise'
 gem 'omniauth-github'
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem 'font-awesome-rails'
+gem 'active_model_serializers'
 
 
 gem 'jbuilder', '~> 2.5'

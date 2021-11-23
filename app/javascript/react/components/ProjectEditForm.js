@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import { Redirect } from "react-router-dom"
-import ProjectShow from "./ProjectShow"
 
 const ProjectEditForm = props => {
   const { id } = props.match.params

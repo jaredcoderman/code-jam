@@ -2,11 +2,33 @@ class Api::V1::ProjectsController < ApplicationController
   
   def index 
     @projects = current_user.projects
-    render json: { projects: @projects }
+    render json: @projects
   end
 
   def show
-    render json: { project: Project.find(params["id"])}
+    @project = Project.find(params["id"])
+    render json: @project
+  end
+
+  def join
+    project = Project.find(project_params["id"])
+    if !project.user_requests.include?(current_user)
+      project.user_requests << current_user
+      render json: {response: "Request sent successfully"}
+    else  
+      render json: {response: "Request already sent"}
+    end
+  end
+
+  def accept
+    project = Project.find(project_params["id"])
+    user = User.find(user_params["id"])
+    project.users << user
+    project.user_requests.delete(user)
+    if project.save 
+      binding.pry
+      render json: {response: "User joined successfully"}
+    end
   end
 
   def create

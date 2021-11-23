@@ -21,10 +21,11 @@ Rails.application.routes.draw do
     namespace :v1 do
       get '/users/projects', to: "projects#index"
       get '/users/current', to: "users#current"
-      get '/projects/:id', to: "projects#show"
       delete '/projects/:id', to: "projects#destroy"
       patch '/projects', to: "projects#update"
-      resources :projects, only: [:create, :destroy]
+      patch '/projects/join', to: "projects#join"
+      patch '/projects/accept', to: "projects#accept"
+      resources :projects, only: [:create, :destroy, :show]
     end 
   end
 

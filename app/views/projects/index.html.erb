@@ -7,6 +7,7 @@
 <% if @projects %>
   <% @projects.each do |project| %>
     <h2><%= link_to project.name, "/projects/#{project.id}" %> </h2>
+    <button></button>
     <h4><%= project.description %> </h4>
     <h5><%= project.owner.name %>, Created: <%= project.created_at.strftime("%B %d %Y") %></h5>
     <hr />
