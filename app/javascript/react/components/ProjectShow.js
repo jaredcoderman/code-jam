@@ -90,31 +90,42 @@ const ProjectShow = props => {
   let userTiles
   if(!_.isEmpty(project)) {
     userTiles = project.users.map(user => {
-      return <p>{user.name}</p>
+      return <p className="user-tile">{user.name}</p>
     })
   }
 
 
   return (
-    <div>
-      {joinResponse}
-      <div className="project-show-header">
-        <h1 className="project-show-title black-and-blue-text">{project.name}</h1>
-        <h3 className="project-show-desc">{project.description}</h3>
-        {button}
-      </div>
-      <div className="grid-x text-center">
-        <div className="cell small-5" />
-        <div className="cell small-1">
-            <button className="button" onClick={editFunc}>Edit</button>
+    <div className="grid-container gray">
+      <div className="black-background">
+        {joinResponse}
+        <div className="show-header-container">
+          <h1 className="project-show-title">
+            {project.name} 
+          </h1>
+          <button className="show-button" onClick={deleteFunc}>
+              Delete
+          </button>
+          <button className="show-button" onClick={editFunc}>
+            Edit
+          </button>
+          {button}
+          <p className="project-show-desc">{project.description}</p>
+        </div>
+        <div className="text-left grid-x grid-margin-x">
+          <div className="text-center cell small-9">
+            <h4 className="show-sub-header">COMMENTS</h4>
+          </div>
+          <div className="text-center cell small-3">
+            <h4 className="show-sub-header">MEMBERS</h4>
+            {userTiles}
           </div>
           <div className="cell small-1">
-            <button className="button" onClick={deleteFunc}>Delete</button>
+
+          </div>
+          {requests}
         </div>
-        {requests}
       </div>
-      <p>Users:</p>
-      {userTiles}
     </div>
 
   )
