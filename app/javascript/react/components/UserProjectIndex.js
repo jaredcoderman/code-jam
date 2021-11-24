@@ -1,5 +1,8 @@
 import React, {useEffect, useState} from "react"
 import UserProjectTile from "./UserProjectTile"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPlusSquare } from "@fortawesome/free-solid-svg-icons"
+import { Link } from "react-router-dom"
 
 const UserProjectIndex = () => {
   const [fetchedProjects, setFetchedProjects] = useState([])
@@ -34,6 +37,13 @@ const UserProjectIndex = () => {
       <h1 className="my-projects-title">Projects</h1>
       <div className="grid-x grid-margin-x">
         {projects}
+        <div className="callout secondary cell small-6 grid-x new-project-tile">
+          <h1 className="new-project-tile">
+            <Link to="/host">
+              <FontAwesomeIcon icon={faPlusSquare} size="2x" />
+            </Link>
+          </h1>
+        </div>
       </div>
     </div>
   )

@@ -37,7 +37,7 @@
 }
 
 .callout.secondary:hover {
-transition: .2s;
+  transition: .2s;
   border: solid 2px #feac27;
   border-radius: 10px;
   background-color: #0f0f0f;
@@ -51,4 +51,18 @@ transition: .2s;
   background-color: #0f0f0f;
   text-shadow:
   3px 3px black;
+}
+
+.new-project-tile {
+  color: #fe4027;  
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 0px;
+  background-color: #0f0f0f;
+}
+
+.new-project-tile:hover h1 {
+  transition: .2s;
+  color: #feac27;
+  cursor: pointer;
 }
