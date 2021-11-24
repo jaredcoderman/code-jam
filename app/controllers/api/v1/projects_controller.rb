@@ -26,8 +26,7 @@ class Api::V1::ProjectsController < ApplicationController
     project.users << user
     project.user_requests.delete(user)
     if project.save 
-      binding.pry
-      render json: {response: "User joined successfully"}
+      render json: {user: {id: user.id, name: user.name}, response: "User added successfully"}
     end
   end
 
