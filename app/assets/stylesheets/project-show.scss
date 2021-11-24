@@ -148,7 +148,7 @@
   margin-top: 1rem;
   border-radius: 10px;
   height: 2.75rem;
-  font-size: 20px;
+  font-size: 1.25rem;
   width: 95%;
   margin-left: 2.5%;
   padding: 3px;
@@ -156,7 +156,25 @@
   cursor: pointer;
 }
 
-.request-tile:hover {
-  color: #fd4576;
-  border-color: #fd4576;
+
+.request-accept{
+  float: left;
+  margin-left: 1rem;
+  margin-top: .425rem;
+}
+
+.request-accept:hover{
+  color: #45fd82;
+  border-color: #45fd82;
+}
+
+.request-deny {
+  float: right;
+  margin-right: 1rem;
+  margin-top: .425rem;
+}
+
+.request-deny:hover {
+  color: #fd4545;
+  border-color: #fd4545;
 }

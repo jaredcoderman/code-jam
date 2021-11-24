@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom"
 import _, { set } from "lodash"
 import CommentTile from "./CommentTile"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faTimesCircle } from "@fortawesome/free-solid-svg-icons"
+import { faCheckSquare, faTimesCircle, faUserCheck, faUserMinus } from "@fortawesome/free-solid-svg-icons"
 
 const ProjectShow = props => {
   const { id } = props.match.params
@@ -56,7 +56,7 @@ const ProjectShow = props => {
     setJoinResponse(responseBody.response)
   }
 
-  const postAccept = async (userId) => {
+  const postAccept = async (userId, choice) => {
     const response = await fetch("/api/v1/projects/accept", {
       method: "PATCH",
       headers: {
@@ -64,13 +64,18 @@ const ProjectShow = props => {
         "Accept": "application/json"
       },
       credentials: "same-origin",
-      body: JSON.stringify({project: {id: id}, user: {id: userId}})
+      body: JSON.stringify({project: {id: id}, user: {id: userId}, choice: choice})
     })
     const responseBody = await response.json()
     if(responseBody.response == "User added successfully") {
       setProject({
         ...project,
         users: project.users.concat(responseBody.user),
+        requests: project.requests.filter(user => user.id !== responseBody.user.id)
+      })
+    } else {
+      setProject({
+        ...project,
         requests: project.requests.filter(user => user.id !== responseBody.user.id)
       })
     }
@@ -104,13 +109,24 @@ const ProjectShow = props => {
   if(userRole == "owner" && !_.isEmpty(project)) {
     requests = project.requests.map(request => {
       const acceptRequest = () => {
-        postAccept(request.id)
+        let choice = confirm("Are you sure?")
+        if(choice) {
+          postAccept(request.id, "accept")
+        }
       }
-      return <button 
-              onClick={acceptRequest} 
-              className="request-tile">
-                {request.name}
-              </button>
+      const rejectRequest = () => {
+        let choice = confirm("Are you sure?")
+        if(choice) {
+          postAccept(request.id, "reject")
+        }
+      }
+      return (
+        <div className="request-tile">
+          <FontAwesomeIcon onClick={acceptRequest} className="request-accept" icon={faUserCheck} />   
+          {request.name}
+          <FontAwesomeIcon onClick={rejectRequest} className="request-deny" icon={faUserMinus} />
+        </div>
+      )      
     })
   }
 
