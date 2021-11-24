@@ -6,8 +6,8 @@ class ProjectsController < ApplicationController
   def search
     query = "%#{params[:query]}%"
     @projects = Project
-      .where('name ilike ? or description ilike ?',
-             query, query)
+      .where('name ilike ?',
+             query)
     render :index
   end
 end

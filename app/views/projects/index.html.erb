@@ -1,15 +1,20 @@
-<%= form_with url: "/search", method: :get do |form| %>
-  <%= form.label :query, "Search for:" %>
-  <%= form.text_field :query %>
-  <%= form.submit "Search", class: "button" %>
-<% end %>
-
-<% if @projects %>
-  <% @projects.each do |project| %>
-    <h2><%= link_to project.name, "/projects/#{project.id}" %> </h2>
-    <button></button>
-    <h4><%= project.description %> </h4>
-    <h5><%= project.owner.name %>, Created: <%= project.created_at.strftime("%B %d %Y") %></h5>
-    <hr />
+<div class="search-bar">
+  <%= form_with url: "/search", method: :get do |form| %>
+    <%= form.label :query, "Enter Project Name", class: "black-and-blue-text" %>
+    <%= form.text_field :query, class: "project-field", placeholder: "..." %>
+    <%= form.submit "SEARCH", class: "show-submit-button" %>
   <% end %>
-<% end %>
+</div>
+
+<div class="result-container">
+  <% if @projects %>
+    <% @projects.each do |project| %>
+      <div class="show-comment-container">
+        <h2 class="result-link"><%= link_to project.name, "/projects/#{project.id}", class: "comment-body top-margin" %> </h2>
+        <button></button>
+        <h4 class="comment-body light"><%= project.description %> </h4>
+        <h5 class="comment-date"><%= project.owner.name %>, Created: <%= project.created_at.strftime("%B %d %Y") %></h5>
+      </div>
+    <% end %>
+  <% end %>
+</div>
