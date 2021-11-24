@@ -1,0 +1,82 @@
+.session-field {
+  border: solid 2px #fe4027 !important;
+  border-radius: 10px;
+  background-color: #171717 !important;
+  color: #7b8792;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -.5rem;
+  margin-bottom: .5rem;
+}
+
+.session-label {
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+}
+
+.minimum-label {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  margin-top: -1rem;
+  margin-bottom: .5rem;
+}
+
+.sign-up {
+  display: block;
+  margin-top: 1rem;
+  width: 17.33%;
+  margin-bottom: 1rem;
+  font-size: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+
+.sign-in {
+  display: block;
+  margin-top: .5rem;
+  width: 17.33%;
+  font-size: 15px;
+  padding: 11px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+
+.github {
+  text-align: center;
+  display: block;
+  width: 17.33%;
+  margin-left: auto;
+  font-weight: 500;
+  margin-right: auto;
+  font-size: 15px;
+  margin-top: -.5rem;
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 1rem;
+  display: block;
+  width: 17.33%;
+  font-size: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 500;
+}
+
+.remember-me {
+  display: block;
+  margin-left: 38%;
+}
+
+#user_remember_me input{
+  background-color: black;
+  padding: 20px;
+  border: solid 2px #7b8792;
+}

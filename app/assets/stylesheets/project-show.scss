@@ -29,21 +29,20 @@
 }
 
 .show-button {
-  border: solid 2px #fd4576;
+  border: solid 2px #fe4027;
   padding: 15px;
-  color: #fd4576;
+  color: #fe4027;
   background-color: #171717;
   border-radius: 10px;
-  float: left;
-  margin-left: 1rem;
+  float: right;
+  margin-right: 1rem;
   margin-top: 1rem; 
+  cursor: pointer;
 }
 
 .show-button:hover {
   transition: .25s;
-  color: #fe4027;
   background-color: rgb(35, 35, 35) ;
-  border-color: #fe4027;
   text-shadow: 
   2px 2px black,
   3px 3px black,
@@ -73,6 +72,11 @@
   3px 3px black;
   margin-bottom: 1rem;  
   text-align: center;
+}
+
+.project-text-area.wide {
+  width: 100%;
+  height: 100px;
 }
 
 .show-comment-container {
@@ -119,6 +123,7 @@
   background-color: transparent;
   color: #77818b;
   padding: 10px;
+  cursor: pointer;
 }
 
 .show-submit-button:hover {
@@ -148,6 +153,7 @@
   margin-left: 2.5%;
   padding: 3px;
   border-bottom: solid 2px #77818b;
+  cursor: pointer;
 }
 
 .request-tile:hover {

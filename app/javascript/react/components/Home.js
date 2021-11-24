@@ -6,10 +6,8 @@ const Home = () => {
       <div className="grid-container">
         <h1 className="text-center home-title">COME TOGETHER TO CODE</h1>
         <h4 className="text-center home-flavor-text">CodeJam connects talented coders from all around the globe. </h4>
-        <div className="grid-x grid-margin-x">
-        </div>
+        <a href="/signup" className="home-get-started">GET STARTED</a>
       </div>
-      <a href="/signup" className="home-get-started">GET STARTED</a>
     </div>
 
   )

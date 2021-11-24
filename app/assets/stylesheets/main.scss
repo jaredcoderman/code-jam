@@ -36,3 +36,14 @@ body, h1, h4 {
   overflow: auto;
   height: 100vh;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #232323 inset !important;
+}
+
+input:-webkit-autofill{
+  -webkit-text-fill-color: #77818b !important;
+  font-size: 1rem;
+}

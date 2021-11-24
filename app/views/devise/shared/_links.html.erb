@@ -1,13 +1,5 @@
-<%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
-<% end %>
-
-<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Sign up", new_registration_path(resource_name) %><br />
-<% end %>
-
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+  <%= link_to "FORGOT YOUR PASSWORD?", new_password_path(resource_name), class: "forgot-password show-submit-button" %><br />
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
@@ -20,6 +12,6 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with Github", user_github_omniauth_authorize_path, method: :post %><br />
+    <%= link_to "SIGN IN WITH GITHUB", user_github_omniauth_authorize_path, method: :post, class: "github show-submit-button" %><br />
   <% end %>
 <% end %>

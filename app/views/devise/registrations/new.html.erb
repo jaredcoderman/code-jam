@@ -1,34 +1,36 @@
-<h2>Sign up</h2>
+<h1 class="text-center black-and-blue-text">SIGN UP</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.label :name, "NAME", class: "session-label black-and-blue-text" %>
+    <%= f.text_field :name, autofocus: true, class: "session-name session-field" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :email, "EMAIL", class: "session-label black-and-blue-text" %>
+    <%= f.email_field :email, autofocus: true, class: "session-field" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, "PASSWORD", class: "session-label black-and-blue-text" %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <em class="minimum-label black-and-blue-text">(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
+    <%= f.password_field :password, autocomplete: "new-password", class: "session-field" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.label :password_confirmation, "PASSWORD CONFIRMATION", class: "session-label black-and-blue-text" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "session-field" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "SIGN UP", class: "show-submit-button sign-up" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+

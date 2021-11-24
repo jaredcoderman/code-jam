@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react"
 import { Redirect } from "react-router-dom"
 import _, { set } from "lodash"
 import CommentTile from "./CommentTile"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons"
 
 const ProjectShow = props => {
   const { id } = props.match.params
@@ -30,10 +32,13 @@ const ProjectShow = props => {
   }
 
   const deleteFunc = async () => {
-    await fetch(`/api/v1/projects/${project.id}`, {
-      method: "DELETE",
-    })
-    setDeleteRedirect(true)
+    let bool = confirm("Are you sure you want to delete this project?")
+    if(bool === true) {
+      await fetch(`/api/v1/projects/${project.id}`, {
+        method: "DELETE",
+      })
+      setDeleteRedirect(true)
+    }
   }
 
   const postJoin = async event => {
@@ -165,6 +170,16 @@ const ProjectShow = props => {
     setComment(event.currentTarget.value)
   }
 
+
+  const closeFlash = () => {
+    setJoinResponse(null)
+  }
+
+  let flashMessage
+  if(joinResponse) {
+    flashMessage = <p className="flash-container">{joinResponse} <FontAwesomeIcon onClick={closeFlash} className="x-button" size="lg" icon={faTimesCircle} /></p>
+  }
+
   return (
     <div>
       {deleteButton}
@@ -172,7 +187,7 @@ const ProjectShow = props => {
       {joinButton}
       <div className="show-margin">
       {error}
-      {joinResponse}
+      {flashMessage}
       <div className="show-header-container">
         <h1 className="project-show-title">
           {project.name} 
