@@ -33,9 +33,9 @@
   
 
   <%- flash.each do |key, value| -%>
-    <div class="flash-container">
+    <div class="flash-container flash-container-<%= key %>">
       <div class="flash flash-<%= key %>">
-        <%= value %><button class="x-button"><%= fa_icon "times-circle", class: "fa-lg" %></button>
+        <%= value %>
       </div>
     </div>
   <%- end -%>

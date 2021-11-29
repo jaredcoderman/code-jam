@@ -50,4 +50,4 @@ In case they break the rules. [ DONE ]
 
 As a project member
 I want to be able to leave a project
-In case it doesn't interest me anymore. [ IN PROGRESS ]
+In case it doesn't interest me anymore. [ DONE ]
