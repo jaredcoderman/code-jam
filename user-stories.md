@@ -6,8 +6,7 @@ So that I can learn more about the app [ DONE ]
 
 As a user
 I want to see a NavBar
-So I can move around the site more easily [ MOSTLY DONE ]
-- Missing: Fetch with external component
+So I can move around the site more easily [ DONE ]
 
 As a user
 I want to be able to navigate to the My Projects page
@@ -35,4 +34,20 @@ So that I can find one to join [ DONE ]
 
 As a user
 I want to be able to request to join a project
-So that I can be a part of a team [ IN PROGRESS ]
+So that I can be a part of a team [ DONE ]
+
+As a project owner
+I want to be able to accept a user to the project
+So that I can have more people to chat with. [ DONE ]
+
+As a project owner
+I want to be able to deny a user from joining my project
+In case I don't want any more members. [ DONE ]
+
+As a project owner
+I want to be able to remove members from my project
+In case they break the rules. [ DONE ]
+
+As a project member
+I want to be able to leave a project
+In case it doesn't interest me anymore. [ IN PROGRESS ]
