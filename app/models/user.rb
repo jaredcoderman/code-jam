@@ -27,4 +27,7 @@ class User < ApplicationRecord
   has_many :project_requests, through: :join_requests, source: :project
 
   has_many :comments
+
+  has_many :user_tags
+  has_many :tags, through: :user_tags
 end

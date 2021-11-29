@@ -5,6 +5,7 @@ import ProjectForm from './ProjectForm'
 import UserProjectIndex from './UserProjectIndex'
 import ProjectEditForm from './ProjectEditForm'
 import ProjectShow from './ProjectShow'
+import UserTagSelection from './UserTagSelection'
 
 const App = (props) => {
   return (
@@ -15,6 +16,7 @@ const App = (props) => {
         <Route exact path="/host" component={ProjectForm} />
         <Route exact path="/projects/:id/edit" component={ProjectEditForm} />
         <Route exact path="/projects/:id" component={ProjectShow} />
+        <Route exact path="/pick_tags" component={UserTagSelection} />
       </Switch>
     </BrowserRouter>
   )
