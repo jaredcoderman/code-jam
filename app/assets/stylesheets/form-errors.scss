@@ -1,0 +1,42 @@
+#error_explanation {
+  background-color: rgb(238, 58, 58);
+  margin-left: 25rem;
+  margin-right: 25rem;
+  border: solid 2px none;
+  border-radius: 10px;
+}
+
+#error_explanation h2, li {
+  color: black;
+  margin-left: 2rem;
+}
+
+#error_explanation h2{
+  padding-top: 1rem;
+  font-size: 30px;
+}
+
+#error_explanation, li:last-child {
+  padding-bottom: .5rem;
+}
+
+.flash-container {
+  color: black;
+  padding: 10px;
+  
+  text-shadow:
+  1.5px 1.5px #77818b;
+  margin-top: .5rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  border: solid 2px #171717;
+  border-radius: 10px;
+}
+
+.flash-container-notice {
+  background-color: #51d474;
+}
+
+.flash-container-alert {
+  background-color: rgb(238, 58, 58);
+}
