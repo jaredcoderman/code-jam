@@ -9,8 +9,5 @@ class ProjectsController < ApplicationController
       .where('name ilike ?',
              query)
     render :index
-    if @projects.length == 0
-      @projects = Project.all
-    end
   end
 end

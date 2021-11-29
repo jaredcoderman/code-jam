@@ -10,6 +10,7 @@
 
 .search-bar {
   margin-left: 10rem;
+  margin-right: 10rem;
 }
 
 .result-container {
@@ -19,4 +20,11 @@
 
 .comment-body.light {
   font-weight: 500;
+}
+
+.search-field {
+  border: solid 2px #fe4027 !important;
+  border-radius: 10px;
+  background-color: #232322 !important;
+  color: #7b8792;
 }
