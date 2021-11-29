@@ -171,10 +171,14 @@
 .request-deny {
   float: right;
   margin-right: 1rem;
-  margin-top: .425rem;
+  margin-top: .4rem;
+  color: #77818b;
 }
 
 .request-deny:hover {
-  color: #fd4545;
-  border-color: #fd4545;
+  color: #fd0000;
+}
+
+.user-tile-name {
+  display: inline;
 }
