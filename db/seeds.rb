@@ -9,6 +9,7 @@
 Project.all.delete_all
 User.all.delete_all
 Comment.all.delete_all
+Tag.all.delete_all
 
 u1 = User.create(name: "Jared Head",  email: "jared@gmail.com", password: "jared123")
 
@@ -33,3 +34,25 @@ p6 = Project.create(name: "Grocery Picker", description: "An app that uses AI to
 up4 = UserProject.create(user: u2, project: p4)
 up5 = UserProject.create(user: u2, project: p5)
 up6 = UserProject.create(user: u2, project: p6)
+
+t1 = Tag.create(name: "React.js")
+t2 = Tag.create(name: "Ruby on Rails")
+t3 = Tag.create(name: "PostgreSQL")
+t4 = Tag.create(name: "Gatsby")
+t5 = Tag.create(name: "Express.js")
+t6 = Tag.create(name: "Node.js")
+t7 = Tag.create(name: "Django")
+t8 = Tag.create(name: "SQLite")
+t9 = Tag.create(name: "MongoDB")
+t10 = Tag.create(name: "HTML")
+t11 = Tag.create(name: "CSS")
+t12 = Tag.create(name: "SCSS")
+t13 = Tag.create(name: "Angular")
+t14 = Tag.create(name: "Flutter")
+t15 = Tag.create(name: "Blazor")
+t16 = Tag.create(name: "Svelte")
+t17 = Tag.create(name: "PHP")
+t18 = Tag.create(name: "Java")
+t19 = Tag.create(name: "JavaScript")
+t20 = Tag.create(name: "TypeScript")
+t21 = Tag.create(name: "Python")

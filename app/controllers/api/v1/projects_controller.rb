@@ -49,6 +49,9 @@ class Api::V1::ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.owner = current_user
     @project.users << current_user
+    params[:tags][:list].each do |id|
+      @project.tags << Tag.find(id)
+    end
     if @project.save
       render json: {response: "Project created successfully"}
     else  
@@ -76,7 +79,7 @@ class Api::V1::ProjectsController < ApplicationController
   private 
 
   def project_params
-    params.require(:project).permit(:name, :description, :id)
+    params.require(:project).permit(:name, :description, :id, :tags)
   end
 
   def user_params

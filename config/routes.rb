@@ -29,6 +29,7 @@ Rails.application.routes.draw do
       post "/projects/:id/comments", to: "comments#create"
       resources :comments, only: [:create, :index]
       resources :projects, only: [:create, :destroy, :show]
+      resources :tags, only: [:index, :update]
     end 
   end
 
