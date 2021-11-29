@@ -3,7 +3,10 @@ import { Redirect } from "react-router-dom"
 import _, { set } from "lodash"
 import CommentTile from "./CommentTile"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faTimesCircle } from "@fortawesome/free-solid-svg-icons"
+import { faCheckSquare, faTimesCircle, faUserCheck, faUserMinus } from "@fortawesome/free-solid-svg-icons"
+import MemberIndex from "./MemberIndex"
+import RequestIndex from "./RequestIndex"
+import JoinButton from "./JoinButton"
 
 const ProjectShow = props => {
   const { id } = props.match.params
@@ -56,75 +59,25 @@ const ProjectShow = props => {
     setJoinResponse(responseBody.response)
   }
 
-  const postAccept = async (userId) => {
-    const response = await fetch("/api/v1/projects/accept", {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      credentials: "same-origin",
-      body: JSON.stringify({project: {id: id}, user: {id: userId}})
-    })
-    const responseBody = await response.json()
-    if(responseBody.response == "User added successfully") {
-      setProject({
-        ...project,
-        users: project.users.concat(responseBody.user),
-        requests: project.requests.filter(user => user.id !== responseBody.user.id)
-      })
-    }
-  }
-
-  if(deleteRedirect) {  
-    return <Redirect to="/my_projects" />
-  }
-
-  if(editRedirect) {
-    return <Redirect to={`/projects/${project.id}/edit`} />
-  }
-
   let joinButton  
   if(userRole == "viewer") {
-    joinButton = <button onClick={postJoin} className="show-button">JOIN</button>
+    joinButton = <JoinButton setJoinResponse={setJoinResponse} project={project}/>
   }
 
-  let editButton
-  let deleteButton
-  if(userRole == "owner") {
-    editButton = <button className="show-button" onClick={editFunc}>
-                  Edit
-                 </button> 
-    deleteButton = <button className="show-button" onClick={deleteFunc}>
-                    Delete
-                   </button>
-  }
-  
   let requests
   if(userRole == "owner" && !_.isEmpty(project)) {
-    requests = project.requests.map(request => {
-      const acceptRequest = () => {
-        postAccept(request.id)
-      }
-      return <button 
-              onClick={acceptRequest} 
-              className="request-tile">
-                {request.name}
-              </button>
-    })
+    requests = <RequestIndex project={project} setProject={setProject} />
   }
 
   let userTiles
   if(!_.isEmpty(project)) {
-    userTiles = project.users.map(user => {
-      return <p className="user-tile">{user.name}</p>
-    })
+    userTiles = <MemberIndex project={project} setProject={setProject} />
   }
 
   let comments
   if(!_.isEmpty(project)) {
     comments = project.comments.map(comment => {
-      return <CommentTile comment={comment} />
+      return <CommentTile key={comment.id} comment={comment} />
     })
   }
   
@@ -170,52 +123,69 @@ const ProjectShow = props => {
     setComment(event.currentTarget.value)
   }
 
-
-  const closeFlash = () => {
-    setJoinResponse(null)
-  }
-
   let flashMessage
   if(joinResponse) {
-    flashMessage = <p className="flash-container">{joinResponse} <FontAwesomeIcon onClick={closeFlash} className="x-button" size="lg" icon={faTimesCircle} /></p>
+    flashMessage = <p className="flash-container">{joinResponse} <FontAwesomeIcon onClick={() => setJoinResponse(null)} className="x-button" size="lg" icon={faTimesCircle} /></p>
   }
 
+  if(deleteRedirect) {  
+    return <Redirect to="/my_projects" />
+  }
+  
+  if(editRedirect) {
+    return <Redirect to={`/projects/${project.id}/edit`} />
+  }
+  
+  
+  let editButton
+  let deleteButton
+  if(userRole == "owner") {
+    editButton = 
+    <button className="show-button" onClick={editFunc}>
+      Edit
+    </button> 
+    deleteButton = 
+    <button className="show-button" onClick={deleteFunc}>
+      Delete
+    </button>
+    
+  }
   return (
     <div>
       {deleteButton}
       {editButton}
       {joinButton}
       <div className="show-margin">
-      {error}
-      {flashMessage}
-      <div className="show-header-container">
-        <h1 className="project-show-title">
-          {project.name} 
-        </h1>
-        <p className="project-show-desc">{project.description}</p>
-      </div>
-      <div className="text-left grid-x grid-margin-x">
-        <div className="cell small-9">
-          <h4 className="show-sub-header">COMMENTS</h4>
-          <form onSubmit={handleSubmit}>
-            <textarea 
-              className="project-text-area wide" 
-              name="description" 
-              placeholder="Leave a comment..." 
-              value={comment} 
-              onChange={handleChange}>
-            </textarea>
-            <input type="submit" value="Comment" className="show-submit-button" />
-          </form>
-          {comments}
+        {error}
+        {flashMessage}
+        <div className="show-header-container">
+          <h1 className="project-show-title">
+            {project.name} 
+          </h1>
+          <p className="project-show-desc">{project.description}</p>
         </div>
-        <div className="text-center cell small-3">
-          <h4 className="show-sub-header">MEMBERS</h4>
-          {requests}
-          {userTiles}
+        <div className="text-left grid-x grid-margin-x">
+          <div className="cell small-9">
+            <h4 className="show-sub-header">COMMENTS</h4>
+            <form onSubmit={handleSubmit}>
+              <textarea 
+                className="project-text-area wide" 
+                name="description" 
+                placeholder="Leave a comment..." 
+                value={comment} 
+                onChange={handleChange}>
+              </textarea>
+              <input type="submit" value="Comment" className="show-submit-button" />
+            </form>
+            {comments}
+          </div>
+          <div className="text-center cell small-3">
+            <h4 className="show-sub-header">MEMBERS</h4>
+            {requests}
+            {userTiles}
+          </div>
         </div>
       </div>
-    </div>
     </div>
   )
 }

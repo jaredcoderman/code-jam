@@ -24,7 +24,8 @@ Rails.application.routes.draw do
       delete '/projects/:id', to: "projects#destroy"
       patch '/projects', to: "projects#update"
       patch '/projects/join', to: "projects#join"
-      patch '/projects/accept', to: "projects#accept"
+      patch '/projects/accept', to: "projects#accept_user"
+      patch '/projects/remove_user', to: "projects#remove_user"
       post "/projects/:id/comments", to: "comments#create"
       resources :comments, only: [:create, :index]
       resources :projects, only: [:create, :destroy, :show]

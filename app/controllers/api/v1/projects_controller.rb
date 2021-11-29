@@ -20,13 +20,28 @@ class Api::V1::ProjectsController < ApplicationController
     end
   end
 
-  def accept
+  def accept_user
     project = Project.find(project_params["id"])
     user = User.find(user_params["id"])
-    project.users << user
-    project.user_requests.delete(user)
-    if project.save 
-      render json: {user: {id: user.id, name: user.name}, response: "User added successfully"}
+    choice = params["choice"]
+    if choice == "accept"
+      project.users << user
+      project.user_requests.delete(user)
+      if project.save 
+        render json: {user: {id: user.id, name: user.name}, response: "User added successfully"}
+      end
+    else  
+      project.user_requests.delete(user)
+      render json: {user: {id: user.id}, response: "Request denied successfully"}
+    end
+  end
+
+  def remove_user
+    project = Project.find(project_params["id"])
+    user = User.find(user_params["id"])
+    if user != project.owner 
+      project.users.delete(user)
+      render json: {response: "User removed successfully"}
     end
   end
 
