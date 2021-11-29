@@ -7,6 +7,7 @@ import { faCheckSquare, faTimesCircle, faUserCheck, faUserMinus } from "@fortawe
 import MemberIndex from "./MemberIndex"
 import RequestIndex from "./RequestIndex"
 import JoinButton from "./JoinButton"
+import LeaveButton from "./LeaveButton"
 
 const ProjectShow = props => {
   const { id } = props.match.params
@@ -28,21 +29,6 @@ const ProjectShow = props => {
   useEffect(() => {
     fetchProject()
   }, [])
-
-
-  const editFunc = () => {
-    setEditRedirect(true)
-  }
-
-  const deleteFunc = async () => {
-    let bool = confirm("Are you sure you want to delete this project?")
-    if(bool === true) {
-      await fetch(`/api/v1/projects/${project.id}`, {
-        method: "DELETE",
-      })
-      setDeleteRedirect(true)
-    }
-  }
 
   const postJoin = async event => {
     event.preventDefault()
@@ -136,6 +122,19 @@ const ProjectShow = props => {
     return <Redirect to={`/projects/${project.id}/edit`} />
   }
   
+  const editFunc = () => {
+    setEditRedirect(true)
+  }
+
+  const deleteFunc = async () => {
+    let bool = confirm("Are you sure you want to delete this project?")
+    if(bool === true) {
+      await fetch(`/api/v1/projects/${project.id}`, {
+        method: "DELETE",
+      })
+      setDeleteRedirect(true)
+    }
+  }
   
   let editButton
   let deleteButton
@@ -148,13 +147,20 @@ const ProjectShow = props => {
     <button className="show-button" onClick={deleteFunc}>
       Delete
     </button>
-    
   }
+
+  let leaveButton
+  if(userRole == "member"){
+    leaveButton = <LeaveButton setDeleteRedirect={setDeleteRedirect} project={project} />
+  }
+
+
   return (
     <div>
       {deleteButton}
       {editButton}
       {joinButton}
+      {leaveButton}
       <div className="show-margin">
         {error}
         {flashMessage}
