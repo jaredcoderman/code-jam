@@ -38,9 +38,11 @@ Rails.application.routes.draw do
   get '/host', to: "homes#index"
   get '/my_projects', to: "homes#index"
   get '/search', to: "projects#search"
+  get '/search_by_tags', to: "projects#search_by_tags"
   get '/pick_tags', to: "homes#index"
   
-  resources :projects, only: [:index, :search]  
+  resources :projects, only: [:index]
+
 
 
 
