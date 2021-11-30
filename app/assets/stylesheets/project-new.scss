@@ -65,3 +65,42 @@
   3px 3px black,
   4px 4px black;
 }
+
+.tag-tile {
+  margin: .5rem .5rem .5rem 1rem;
+  padding: 10px;
+  border: solid 2px #7b8792;
+  color: #7b8792;
+  border-radius: 10px;  
+}
+
+.tag-tile:hover {
+  transition: .25s;
+  background-color: rgb(35, 35, 35) ;
+  cursor: pointer;
+  text-shadow: 
+  1px 1px black,
+  2px 3px black,
+  3px 3px black;
+}
+
+.tag-tile.selected {
+  transition: .25s;
+  color: #feac27;
+  background-color: rgb(35, 35, 35) ;
+  border-color: #feac27;
+  cursor: pointer;
+  text-shadow: 
+  1px 1px black,
+  2px 2px black,
+  3px 3px black;
+}
+
+.tag-container {
+  text-align: center;
+  background-color: transparent;
+  width: 50%;
+  margin-left: 23rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+}

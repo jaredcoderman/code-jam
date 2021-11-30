@@ -51,3 +51,11 @@ In case they break the rules. [ DONE ]
 As a project member
 I want to be able to leave a project
 In case it doesn't interest me anymore. [ DONE ]
+
+As a project creater
+I want to be able to add tags to my project
+So that people can find it more easily. [ DONE ]
+
+As a unauthenticated user
+I want to be able to add tags for technologies I know
+So that I can find projects that match my tags. [ IN PROGRESS ]
